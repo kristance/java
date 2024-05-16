@@ -1,0 +1,15 @@
+package com.tjoeun.shareAreaTest;
+
+public class ShareAreaTest {
+
+	public static void main(String[] args) {
+
+//		공유 영역으로 사용할 클래스 객체를 선언한다.
+		ShareArea shareArea = new ShareArea();
+		
+		
+		
+		
+	}
+
+}

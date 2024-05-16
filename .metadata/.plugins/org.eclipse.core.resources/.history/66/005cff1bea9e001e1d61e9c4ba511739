@@ -1,0 +1,18 @@
+package com.tjoeun.synchronizedMethodTest;
+
+public class LibraryMain {
+
+	public static void main(String[] args) {
+
+		Library library = new Library();
+		System.out.println(library.bookList);
+		
+		String book = library.bookList.remove(0);
+		System.out.println(book);
+		System.out.println(library.bookList);
+
+//		ArrayList의 remove(object), remove(index)
+		System.out.println(library.bookList.remove("다빈치 코드"));
+	}
+
+}

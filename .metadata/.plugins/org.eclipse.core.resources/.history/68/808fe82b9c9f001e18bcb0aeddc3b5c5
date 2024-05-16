@@ -1,0 +1,30 @@
+package com.tjoeun.dbConnectionTest;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class MySQLConnectionTest {
+
+	public static void main(String[] args) {
+
+//		JDBC(Java DataBase Connection)는 자바를 이용해서 데이터베이스에 연결하는 기술이다.
+//		데이터베이스 작업에 사용할 객체를 선언한다.
+		Connection conn = null; // 데이터베이스와 연결한다.
+		Statement stmt = null; // 정적 쿼리를 실행한다. -> 쿼리에 변수가 사용되지 않는 경우 -> 간단한 쿼리
+		PreparedStatement pstmt = null; // 동적 쿼리를 실행한다. -> 쿼리에 변수가 사용되는 경우 -> 복잡한 쿼리
+		ResultSet rs = null; // SELECT SQL 쿼리의 실행 결과를 기억한다.
+
+//		드라이버 클래스를 읽어온다.
+		try {
+			Class.forName("com.mysql.jdbc.Driver"); // MySQL 5.x 사용자
+//			Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL 8.x 사용자
+//			MySQL에 연결한다.
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 클래스가 없거나 읽어올 수 없습니다.");
+		}
+
+	}
+
+}

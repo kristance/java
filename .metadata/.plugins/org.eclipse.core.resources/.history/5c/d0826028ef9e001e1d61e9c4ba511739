@@ -1,0 +1,31 @@
+package com.tjoeun.synchronizedMethodTest;
+
+public class Student extends Thread {
+	
+//	생성자를 통해서 스레드 이름(도서를 대여할 학생 이름)을 넣어준다.
+	public Student() {
+	}
+	public Student(String name) {
+		super(name); // 상속하는 Thread 클래스로 넘겨서 name Thread를 만들어준다.
+	}
+	@Override
+	public void run() {
+		
+//		도서 대여
+		try {
+			String book = LibraryMain.library.bookList.remove(0);
+			if (book == null) {
+				return;
+			}
+			Thread.sleep(2500); // 대여 기간
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+		
+		
+		
+		
+	}
+	
+	
+}

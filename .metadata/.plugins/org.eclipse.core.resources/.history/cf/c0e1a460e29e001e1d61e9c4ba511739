@@ -1,0 +1,11 @@
+package com.tjoeun.synchronizedBlockTest;
+
+public class test {
+
+	public static void main(String[] args) {
+		Account account = new Account("1000", "홍길동", 5000);
+//		account.deposit(100);
+		account.withDraw(100);
+		System.out.println(account);
+	}
+}

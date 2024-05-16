@@ -1,0 +1,5 @@
+package com.tjoeun.synchronizedBlockTest;
+
+public class Account {
+
+}

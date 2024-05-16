@@ -1,0 +1,45 @@
+package com.tjoeun.synchronizedBlockTest;
+
+
+// 입출력 스레드
+public class TransferThread extends Thread {
+
+	ShareArea shareArea;
+	
+	public TransferThread() {
+	}
+
+	public TransferThread(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	public ShareArea getShareArea() {
+		return shareArea;
+	}
+	public void setShareArea(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	@Override
+	public void run() {
+		
+		for (int i = 0; i < 20; i++) {
+			shareArea.lee.deposit(1000000);
+			System.out.println("이몽룡 계좌 100만원 입금");
+			if (shareArea.hong.withDraw(1000000) != 0 ) {
+				System.out.println("홍길동 계좌 100만원 출금");
+			}
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+	
+	
+	
+}

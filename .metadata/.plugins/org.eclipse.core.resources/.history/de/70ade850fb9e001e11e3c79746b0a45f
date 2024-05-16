@@ -1,0 +1,40 @@
+package com.tjoeun.synchronizedMethodTest;
+
+public class LibraryMain {
+	
+	static Library library = new Library();
+
+	public static void main(String[] args) {
+		
+		/*
+		System.out.println(library.bookList);
+		
+		String book = library.bookList.remove(0);
+		System.out.println(book);
+		System.out.println(library.bookList);
+
+//		ArrayList의 remove(object) 메소드를 실행하면 삭제할 객체가 있으면 true, 없으면 false를 리턴하고
+//		remove(index) 메소드를 실행하면 삭제할 인덱스의 데이터가 있으면 데이터를 리턴하고,
+//		삭제할 인덱스의 데이터가 없으면 IndexOutOfBoundException을 발생시킨다.
+		System.out.println(library.bookList.remove("다빈치 코드")); // false
+		System.out.println(library.bookList.remove("천사와 악마")); // true
+		System.out.println(library.bookList.remove(0)); // 디지털 포트리스
+		System.out.println(library.bookList.remove(4)); // 예외 발생
+		*/
+	
+		Student student1 = new Student("홍길동"); // 스레드를 실행시키기 위해서 스레드 클래스를 상속받은 클래스의 객체를 만들어줌
+		Student student2 = new Student("임꺽정"); 
+		Student student3 = new Student("장길산"); 
+		Student student4 = new Student("일지매"); 
+		Student student5 = new Student("이몽룡"); 
+		Student student6 = new Student("성춘향"); 
+		student1.start();
+		student2.start();
+		student3.start();
+		student4.start();
+		student5.start();
+		student6.start();
+	
+	}
+
+}

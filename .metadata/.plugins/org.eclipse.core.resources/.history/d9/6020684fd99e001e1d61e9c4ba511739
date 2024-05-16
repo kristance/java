@@ -1,0 +1,47 @@
+package com.tjoeun.shareAreaTest;
+
+
+// 연산을 하는 스레드, 실행 시간이 긴 스레드
+public class CalculatorThread extends Thread {
+
+//	공유 영역으로 사용할 클래스 객체를 필드로 선언한다.
+	ShareArea shareArea;
+	
+	public CalculatorThread() {
+
+	}
+
+	public CalculatorThread(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	public ShareArea getShareArea() {
+		return shareArea;
+	}
+	public void setShareArea(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	@Override
+	public void run() {
+		
+//		무한 급수를 이용한 원주율 계산 -> 실행 시간이 오래 걸린다.
+		double start = System.currentTimeMillis();
+		double total = 0.0;
+		for (long i = 1; i < 3000000000L;i += 2) {
+			if (i / 2 % 2 == 0) {
+				total += 1.0 / i;
+			}else {
+				total += -1.0 / i;
+			}
+		}
+		System.out.println("원주율 : " + total * 4);
+		double end = System.currentTimeMillis();
+	
+	}
+	
+	
+	
+	
+	
+}

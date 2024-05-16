@@ -1,0 +1,7 @@
+package com.tjoeun.synchronizedMethodTest;
+
+public class aa {
+
+	
+	Thread thread  = Thread.currentThread();
+}

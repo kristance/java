@@ -1,0 +1,20 @@
+package com.tjoeun.synchronizedMethodTest;
+
+import java.util.ArrayList;
+
+public class Library {
+
+	ArrayList<String> bookList = new ArrayList<>();
+	
+	public Library() {
+		bookList.add("다빈치 코드");
+		bookList.add("천사와 악마");
+		bookList.add("디지털 포트리스");
+		bookList.add("라스트 심볼");
+		bookList.add("타나토 노트");
+		bookList.add("개미");
+	}
+	
+	
+	
+}

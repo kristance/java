@@ -1,0 +1,36 @@
+package com.tjoeun.shareAreaTest;
+
+
+// 연산 결과를 출력하는 클래스, 실행 시간이 짧은 스레드
+public class PrintThread extends Thread {
+
+//	공유 영역으로 사용할 클래스 객체를 필드로 선언한다.
+	ShareArea shareArea;
+	
+	public PrintThread() {
+
+	}
+
+	public PrintThread(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	public ShareArea getShareArea() {
+		return shareArea;
+	}
+	public void setShareArea(ShareArea shareArea) {
+		this.shareArea = shareArea;
+	}
+
+	@Override
+	public void run() {
+		
+//		CalculatorThread에서 계산된 원주율을 출력한다. -> 실행 시간이 짧다.
+		System.out.println("원주율 : " + shareArea.result);
+		
+	}
+	
+	
+	
+	
+}
